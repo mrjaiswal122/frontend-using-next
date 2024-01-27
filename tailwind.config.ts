@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors:{
+        "very-dark-blue":"hsl(226, 43%, 10%)",
+        "Dark-blue":"hsl(235, 46%, 20%)",
+        "Desaturated-blue":"hsl(235, 45%, 61%)",
+        "Pale-Blue":"hsl(236, 100%, 87%)",
+        "Blue":"hsl(246, 80%, 60%)",
+        "workbg":"hsl(15, 100%, 70%)"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
