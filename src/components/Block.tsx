@@ -44,15 +44,14 @@ export type card={
     }
 }
     return( 
-                <div className=" h-full bg-very-dark-blue w-full overflow-hidden">
-                   <div className={clsx(" h-48  w-48  rounded-xl relative",props.color)}>
+                   <div className={clsx(" h-48  w-48  rounded-xl overflow-hidden relative",props.color)}>
                 <Image className="absolute right-3 top-[-7px]"
                     src={props.icon}
                 alt="not found"
                 width={58}
                 height={58}/>
-                <div className="w-48 h-40 bg-Dark-blue rounded-xl absolute bottom-[-1px] hover:bg-Desaturated-blue ">
-                   <div className=" flex  flex-col justify-between px-5 h-full py-5 text-white">
+
+                <div className="w-full h-40 bg-Dark-blue rounded-xl absolute flex  flex-col justify-between px-5  py-5 text-white bottom-[-2px] hover:bg-Desaturated-blue ">
                         {/* mininavbar */}
                    <div className=" flex justify-between items-center ">
                     <div className=" text-[18px] font-bold">{props.title}</div>
@@ -66,7 +65,6 @@ export type card={
 
                     </div>
                 </div>
-            </div>
-        </div>
+        
     );
  };

@@ -11,6 +11,7 @@ import studyImg from "@/assets/images/icon-study.svg";
 import playImg from "@/assets/images/icon-play.svg";
 import exerciseImg from "@/assets/images/icon-exercise.svg";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import clsx from "clsx";
 
 export default function Home() {
 
@@ -58,7 +59,7 @@ const stylist:sc=[{
     <main className="   max-w-[900px]  flex  gap-8 h-[420px]">
       {/* person */}
       <div className=" h-full w-48 bg-Dark-blue relative rounded-xl">
-        <div className=" w-full h-[70%] bg-Blue rounded-xl flex justify-between flex-col pt-5 pl-5 pb-16">
+        <div className=" w-full h-[60%] bg-Blue rounded-xl flex justify-between flex-col pt-5 pl-5 pb-16">
            <Image className=" border-solid border-[2px] border-white rounded-full"
            src="/image-jeremy.png"
            alt="not found"
@@ -72,11 +73,10 @@ const stylist:sc=[{
            <h1 className="text-3xl text-white font-normal">Robson</h1>
            </div>
         </div>
-
         <div className=" flex flex-col pt-5 pl-5 pb-10 text-Pale-Blue gap-1 text-[18px]">
-        <div className=" hover:text-white" onClick={resultDaily}>Daily</div>
-        <div className="active:text-white hover:text-white" onClick={resultWeekly}>Weekly</div>
-        <div className="active:text-white hover:text-white" onClick={resultMonthly}>Monthly</div>
+        <div className={result === 1?"text-white":"hover:text-white"} onClick={resultDaily}>Daily</div>
+        <div className={result === 2?"text-white":"hover:text-white"} onClick={resultWeekly}>Weekly</div>
+        <div className={result === 3?"text-white":"hover:text-white"} onClick={resultMonthly}>Monthly</div>
         </div>
       </div>
       {/* blocks */}
