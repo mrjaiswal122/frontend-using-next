@@ -19,7 +19,7 @@ const config: Config = {
         "study":"hsl(348, 100%, 68%)",
         "exercise":"hsl(145, 58%, 55%)",
         "social":"hsl(264, 64%, 52%)",
-        "self care":"hsl(43, 84%, 65%)"
+        "self-care":"hsl(43, 84%, 65%)"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

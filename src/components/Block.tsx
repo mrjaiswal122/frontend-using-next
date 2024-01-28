@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { BsThreeDots } from "react-icons/bs";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import clsx from "clsx";
  type frame={
 current:number,
 previous:number
@@ -11,38 +13,41 @@ previous:number
     monthly:frame
  };
 export type card={
-    title:string,
-    timeframes:timeFrame,
-    result:number
+    title:string;
+    timeframes:timeFrame;
+    result:number;
+    icon:string | StaticImport;
+    color:string ;
  };
+ 
+ 
 
  export default function Blocks(props:card){
-const s=props.timeframes;
-var  current:number=0;
-var  previous:number=0;
-if(props.result==1){
-current=props.timeframes.daily.current;
-previous=props.timeframes.daily.previous;
-}
-if(props.result==2){
-current=props.timeframes.weekly.current;
-previous=props.timeframes.weekly.previous;
+     const s=props.timeframes;
+     var  current:number=0;
+     var  previous:number=0;
+     {
 
+    if(props.result==1){
+        current=props.timeframes.daily.current;
+        previous=props.timeframes.daily.previous;
+    }
+    if(props.result==2){
+        current=props.timeframes.weekly.current;
+        previous=props.timeframes.weekly.previous;
+        
+    }
+    if(props.result==3){
+        current=props.timeframes.monthly.current;
+        previous=props.timeframes.monthly.previous;
+        
+    }
 }
-if(props.result==3){
-current=props.timeframes.monthly.current;
-previous=props.timeframes.monthly.previous;
-
-}
-
     return( 
-                <div className=" h-full bg-very-dark-blue w-full ">
-                    {/* error */}
-            <div className={' h-48  w-48  bg-${props.title.toLowerCase()} rounded-xl relative'}>
+                <div className=" h-full bg-very-dark-blue w-full overflow-hidden">
+                   <div className={clsx(" h-48  w-48  rounded-xl relative",props.color)}>
                 <Image className="absolute right-3 top-[-7px]"
-                    {/* error */}
-
-                src={'/images/icon-${props.title.toLowerCase()}.svg'}
+                    src={props.icon}
                 alt="not found"
                 width={58}
                 height={58}/>
